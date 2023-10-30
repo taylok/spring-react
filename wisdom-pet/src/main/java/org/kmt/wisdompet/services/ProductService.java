@@ -22,9 +22,7 @@ public class ProductService {
     public List<Product> getAllProducts() {
         Iterable<ProductEntity> productEntities = this.productRepository.findAll();
         List<Product> products = new ArrayList<>();
-        productEntities.forEach(productEntity -> {
-            products.add(translateDbToWeb(productEntity));
-        });
+        productEntities.forEach(productEntity -> products.add(translateDbToWeb(productEntity)));
         return products;
     }
 

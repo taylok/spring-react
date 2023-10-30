@@ -21,9 +21,7 @@ public class ServiceService {
   public List<Service> getAllServices(){
     Iterable<ServiceEntity> entities = this.serviceRepository.findAll();
     List<Service> services = new ArrayList<>();
-    entities.forEach(entity -> {
-      services.add(this.translateDbToWeb(entity));
-    });
+    entities.forEach(entity -> services.add(this.translateDbToWeb(entity)));
     return services;
   }
 

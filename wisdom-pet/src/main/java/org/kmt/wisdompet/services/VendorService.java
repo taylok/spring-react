@@ -22,9 +22,7 @@ public class VendorService {
     public List<Vendor> getVendors() {
         Iterable<VendorEntity> vendorEntities = this.vendorRepository.findAll();
         List<Vendor> vendors = new ArrayList<>();
-        vendorEntities.forEach(vendorEntity -> {
-            vendors.add(this.translateDbToWeb(vendorEntity));
-        });
+        vendorEntities.forEach(vendorEntity -> vendors.add(this.translateDbToWeb(vendorEntity)));
         return vendors;
     }
 
